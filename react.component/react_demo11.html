@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React组件：获取真实DOM节点</title>
+</head>
+
+<body>
+    <h1>获取真实DOM节点</h1>
+    <div id="reactContainer"></div>
+    <script crossorigin src="https://cdn.bootcss.com/react/15.6.1/react.js"></script>
+    <script crossorigin src="https://cdn.bootcss.com/react-dom/15.6.1/react-dom.js"></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.38/browser.min.js"></script>
+    <script type="text/babel">
+        let RealDom = React.createClass({
+            render(){
+                return (
+                    <div>
+                        <input type="text" ref="input" placeholder="Focus the text input"/>
+                        <button onClick={this.handleClick}>输入框聚焦</button>
+                    </div>
+                )
+            },
+            handleClick(event){
+                this.refs.input.focus()
+            }
+        })
+        ReactDOM.render(<RealDom/>,document.getElementById('reactContainer'))
+    </script>
+</body>
+
+</html>
