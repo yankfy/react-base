@@ -41,4 +41,17 @@ ReactDOM.render(
 ## props成员
 *props与state的区别*
 props不能被其所在的组件修改，从父组件传递进来的属性不会在组件内部更改；state只能在所在组件内部更改，或在外部调用setState函数对状态进行间接修改。
+## 生命周期
+过程中涉及三个主要的动作术语：
 
+- mounting:表示正在挂接虚拟DOM到真实DOM。
+- updating:表示正在被重新渲染。
+- unmounting:表示正在将虚拟DOM移除真实DOM。
+
+每个动作术语提供两个函数：
+
+- componentWillMount()
+- componentDidMount()
+- componentWillUpdate(object nextProps, object nextState)
+- componentDidUpdate(object prevProps, object prevState)
+- componentWillUnmount()
