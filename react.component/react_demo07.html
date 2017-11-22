@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React组件：生命周期</title>
+</head>
+
+<body>
+    <h1>生命周期</h1>
+    <div id="reactContainer"></div>
+    <script crossorigin src="https://cdn.bootcss.com/react/15.6.1/react.js"></script>
+    <script crossorigin src="https://cdn.bootcss.com/react-dom/15.6.1/react-dom.js"></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.38/browser.min.js"></script>
+    <script type="text/babel">
+        let AddCount =  React.createClass({
+            getInitialState(){
+                console.log('1.getInitialState')
+                return {count:1}
+            },
+            componentWillMount(){
+                console.log('2.compontentWillMount')
+            },
+            componentDidMount(){
+                console.log('3.compontentDidMount')
+            },
+            componentWillUpdate(){
+                console.log('4.compontentWillUpdate')
+            },
+            componentDidUpdate(){
+                console.log('5.compontentDidUpdate')
+            },
+            componentWillUnmount(){
+                console.log('6.componentWillUnmount')
+            },
+            handleClick(){
+               this.setState({count:this.state.count+1})
+            },
+            render(){
+                return (<div><p>{this.state.count}</p><button onClick={this.handleClick}>更改数字</button></div>)
+            }
+        })
+        ReactDOM.render(<AddCount/>,document.getElementById('reactContainer'))
+    </script>
+</body>
+
+</html>
