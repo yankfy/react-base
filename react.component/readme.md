@@ -31,3 +31,14 @@ let arr=[
 ReactDOM.render(
 <div>{arr}</div>, document.getElementById('reactContainer') )
 ```
+# React组件
+## state成员
+*程序中需要注意的点*
+ 
+- getInitialState函数必须有返回值，可以是null,false,一个对象。
+- 访问state数据的方法是”this.state.属性名”。
+- 变量用{}包裹，不需要再加双引号。
+## props成员
+*props与state的区别*
+props不能被其所在的组件修改，从父组件传递进来的属性不会在组件内部更改；state只能在所在组件内部更改，或在外部调用setState函数对状态进行间接修改。
+
