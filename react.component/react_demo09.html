@@ -19,7 +19,7 @@
             render(){
                 return (
                     <ol>
-                    {React.Children.map(props.children,(child)=>{return <li>{child}</li>})}
+                    {React.Children.map(this.props.children,(child)=>{return <li>{child}</li>})}
                     </ol>)
             }
         })

@@ -62,3 +62,9 @@ this.props.children的值有三种可能
 - 如果有一个子节点，数据类型是object
 - 如果有多个子节点，数据类型就是array。
 所以处理this.proprs.children的时候要小心。
+
+## PropsType和getDefaultProps
+React.PropTypes提供各种验证器（validator）来验证传入数据的有效性。 
+使用getDefaultProps方法可以用来设置组件属性的默认值。
+
+
