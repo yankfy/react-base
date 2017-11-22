@@ -55,3 +55,10 @@ props不能被其所在的组件修改，从父组件传递进来的属性不会
 - componentWillUpdate(object nextProps, object nextState)
 - componentDidUpdate(object prevProps, object prevState)
 - componentWillUnmount()
+
+## this.props.children()
+this.props.children的值有三种可能
+- 如果当前组件没有子节点，他就是undfined
+- 如果有一个子节点，数据类型是object
+- 如果有多个子节点，数据类型就是array。
+所以处理this.proprs.children的时候要小心。
