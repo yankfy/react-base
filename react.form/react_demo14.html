@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>React 表单name复用</title>
+    <title>React 可控组件</title>
 </head>
 
 <body>
-    <h1>React 表单name复用</h1>
+    <h1>React 可控组件</h1>
     <div id="reactContainer"></div>
     <script crossorigin src="https://cdn.bootcss.com/react/15.6.1/react.js"></script>
     <script crossorigin src="https://cdn.bootcss.com/react-dom/15.6.1/react-dom.js"></script>
@@ -18,40 +18,18 @@
         let MyForm = React.createClass({
             getInitialState(){
                 return {
-                    username:'',
-                    gender:"man",
-                    checked:true
+                    value:"pp"
                 }
             },
-            handleChange(event){
-                let newState = {}
-                newState[event.target.name] = event.target.name === 'checked' ? event.target.checked : event.target.value
-                this.setState(newState)
-                console.log(newState)
-            },
-            submitHandler(e){
-                e.preventDefault();
-                let is = this.state.checked === true ?"是":"不是"
-                let gender = this.state.gender === 'man' ?"帅哥":"美女"
-                alert(this.state.username+is+gender)
+            handleChange(e){
+                this.setState({value:e.target.value})
+                console.log(this.state.value)
             },
             render(){
                 return(
-                    <form onSubmit={this.submitHandler}>
-                        <label htmlFor="username">请输入您的姓名：</label>
-                        <input type="text" id="username" name="username" onChange={this.handleChange} value={this.state.username}/>
-                        <br/>
-                        <label htmlFor="checkbox">是或者否：</label>
-                        <input type="checkbox" id="checkbox" name="checked" onChange={this.handleChange} checked={this.state.checked}/>
-                        <br/>
-                        <label htmlFor="gender">请选择：</label>
-                        <select name="gender" value={this.state.gender} onChange={this.handleChange}>
-                            <option value="man">帅哥</option>
-                            <option value="woman">美女</option>
-                        </select>
-                        <br/>
-                        <button type="submit">提交</button>
-                    </form>
+                    <div>
+                        <input type="text" value={this.state.value} onChange={this.handleChange} />
+                    </div>      
                 )
             }
         })
