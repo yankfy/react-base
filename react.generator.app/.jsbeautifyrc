@@ -1,0 +1,30 @@
+{
+    "prettier.singleQuote": true,
+	"prettier.semi": false,
+	"vetur.format.defaultFormatter.html": "js-beautify-html",
+	"javascript.validate.enable": false,
+	"editor.wrappingColumn": 100,
+    "files.eol": "\n",
+    "eol": "\n",
+    "indent_size": 2,
+	"beautify.onSave": ["js", "css", "html"],
+	"beautify.language": {
+		"css": [
+			"scss"
+		],
+		"html": [
+			"vue"
+		]
+	},
+	"beautify.onSaveIgnore": [
+		"**/node_modules/**",
+		"**/*+(.|_|-)min.*"
+    ],
+    "e4x": true,
+    "js": {
+        "end_with_newline": true
+    },
+    "html": {
+        "extra_liners": []
+    }
+}
