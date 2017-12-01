@@ -67,4 +67,15 @@ this.props.children的值有三种可能
 React.PropTypes提供各种验证器（validator）来验证传入数据的有效性。 
 使用getDefaultProps方法可以用来设置组件属性的默认值。
 
+# 表单的事件响应和bind复用
+
+## bind复用
+bind方法为事件相应函数增加一个参数，事件响应函数通过该参数识别事件源。
+
+*<label>标签里的for不能在正常使用了，而是要写成htmlFor*
+
+## name复用
+*为每个标签增加一个name属性值并不友好。*
+
+ 
 
