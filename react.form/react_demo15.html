@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React 不可控组件</title>
+</head>
+
+<body>
+    <h1>React 可控组件</h1>
+    <div id="reactContainer"></div>
+    <script crossorigin src="https://cdn.bootcss.com/react/15.6.1/react.js"></script>
+    <script crossorigin src="https://cdn.bootcss.com/react-dom/15.6.1/react-dom.js"></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.38/browser.min.js"></script>
+    <script type="text/babel">
+        let MyForm = React.createClass({
+            handleChange(event){
+                // console.log(this.refs.input)
+                let inputNode = ReactDOM.findDOMNode(this.refs.input).value
+                console.log(inputNode)
+            },
+            render(){
+                return(
+                    <div>
+                        <input type="text" defaultValue="pp" onChange={this.handleChange} ref="input"/>
+                    </div>
+                )
+            }
+        })
+        ReactDOM.render(<MyForm/>,document.getElementById('reactContainer'))
+    </script>
+</body>
+
+</html>

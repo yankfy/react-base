@@ -89,5 +89,20 @@ bind方法为事件相应函数增加一个参数，事件响应函数通过该�
 
 ## 不可控组件
 
- 
+组件完成之后给它加上一个onChange事件，发现是可以监控到变化值的。如果要获得iput中的value值，需先拿到其DOM节点，然后获取其value值。
+```js
+var  MyForm = React.createClass({
+    handleChange:function(){
+        var inputValue=ReactDOM.findDOMNode(this.refs.jspang).value;
+        console.log(inputValue);
+    },
+    render:function(){
+        return(
+            <div>
+                <input type="text" onChange={this.handleChange} ref="jspang"/>
+            </div>
+        )
+    }
+});
+```
 
