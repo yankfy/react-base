@@ -9,6 +9,8 @@ import Load from './load'
 import Loadb from './load.b'
 import Loadc from './load.c'
 
+// exact 表示精确匹配
+
 ReactDOM.render(
     <Router>
         <div>

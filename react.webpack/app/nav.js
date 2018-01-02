@@ -3,6 +3,8 @@ import {
     NavLink
 } from 'react-router-dom'
 
+// exact表示精确匹配
+
 let NavBar = () => (
     <div>
         <div>
