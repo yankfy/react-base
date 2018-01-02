@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom'
 import {
     BrowserRouter as Router,
     Route,
-    Switch
+    Switch,
+    Redirect
 } from 'react-router-dom'
 import Nav from './nav'
 import Load from './load'
@@ -22,6 +23,7 @@ ReactDOM.render(
                 <Route exact path="/" component={Load}></Route>
                 <Route path="/b" component={Loadb}></Route>
                 <Route path="/c" component={Loadc}></Route>
+                <Redirect from="/redirect" to="/b"></Redirect>
                 <Route component={Error}></Route>
             </Switch>
         </div>
