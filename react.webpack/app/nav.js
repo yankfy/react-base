@@ -11,7 +11,7 @@ let NavBar = () => (
         <div>
             <NavLink exact className="blue" to="/" >load</NavLink> | 
             <NavLink to="/b" style={{color:'red',fontSize:'33px'}}>loadb</NavLink> | 
-            <NavLink to="/c" activeClassName="green">loadc</NavLink> |  
+            <NavLink to="/c/ILoveWeb/HelloJSPang" activeClassName="green">loadc</NavLink> |  
             <NavLink to="/react" activeClassName="active">404页面</NavLink> |  
             <NavLink to="/redirect" activeClassName="active">404页面Redirect</NavLink> 
         </div>

@@ -22,7 +22,7 @@ ReactDOM.render(
             <Switch>
                 <Route exact path="/" component={Load}></Route>
                 <Route path="/b" component={Loadb}></Route>
-                <Route path="/c" component={Loadc}></Route>
+                <Route path="/c/:paramA/:paramB" component={Loadc}></Route>
                 <Redirect from="/redirect" to="/b"></Redirect>
                 <Route component={Error}></Route>
             </Switch>
