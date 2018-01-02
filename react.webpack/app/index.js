@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import {
-    BrowserRouter as Router,
+    BrowserRouter as 
+    Router,
     Route,
     Switch,
     Redirect
@@ -14,9 +15,13 @@ import Loadc from './load.c'
 import Error from './error'
 
 // exact 表示精确匹配
+// basename 表示强制刷新
+// forceRefresh 表示强制刷新
+// 五种浏览器模式 
+// BrowserRouter HashRouter MemoryRouter NativeRouter
 
 ReactDOM.render(
-    <Router>
+    <Router basename="demo" forceRefresh={false}>
         <div>
             <Nav/>
             <Switch>
