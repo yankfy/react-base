@@ -3,6 +3,7 @@ import {Prompt} from 'react-router-dom'
 
 export default class loadb extends React.Component{
     constructor(props){
+        // 了解super() 函数用法 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super
         super(props);
         this.state = {
             power:false
