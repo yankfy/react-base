@@ -15,9 +15,9 @@ import Loadc from './load.c'
 import Error from './error'
 
 // exact 表示精确匹配
-// basename 表示强制刷新
+// basename 表示路由层级
 // forceRefresh 表示强制刷新
-// 五种浏览器模式 
+// 五种路由模式 
 // BrowserRouter HashRouter MemoryRouter NativeRouter
 
 ReactDOM.render(
