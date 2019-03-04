@@ -27,7 +27,10 @@ module.exports = {
   devtool: 'inline-source-map',
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: [".ts", ".tsx", ".js", ".json"]
+    extensions: [".ts", ".tsx", ".js", ".json"],
+    alias: {
+      '@': './src'
+    }
   },
   devServer: {
     port: '8080',

@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { Layout, Menu, Icon } from 'antd';
-import { Link } from 'react-router-dom';
-import './Sidebar.scss';
+import * as React from "react";
+import { Layout, Menu, Icon } from "antd";
+import { Link } from "react-router-dom";
+import "./Sidebar.scss";
 
 interface SidebarState {
   collapsed: boolean;
-  mode: 'vertical' | 'inline' | 'horizontal' | undefined;
+  mode: "vertical" | "inline" | "horizontal" | undefined;
 }
 
 class Sidebar extends React.Component<{}, SidebarState> {
@@ -13,7 +13,7 @@ class Sidebar extends React.Component<{}, SidebarState> {
     super(props);
     this.state = {
       collapsed: false,
-      mode: 'inline'
+      mode: "inline",
     };
   }
 
@@ -25,7 +25,7 @@ class Sidebar extends React.Component<{}, SidebarState> {
         onCollapse={this.toggle}
       >
         <div className="ant-layout-logo" />
-        <Menu theme="dark" mode={this.state.mode} defaultSelectedKeys={['1']}>
+        <Menu theme="dark" mode={this.state.mode} defaultSelectedKeys={["1"]}>
           <Menu.Item key="1">
             <Link to="/home">
               <Icon type="home" />
@@ -48,7 +48,7 @@ class Sidebar extends React.Component<{}, SidebarState> {
         <div className="sider-trigger">
           <Icon
             className="trigger"
-            type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+            type={this.state.collapsed ? "menu-unfold" : "menu-fold"}
             onClick={this.toggle}
           />
         </div>
@@ -59,7 +59,7 @@ class Sidebar extends React.Component<{}, SidebarState> {
   private toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed,
-      mode: !this.state.collapsed ? 'vertical' : 'inline'
+      mode: !this.state.collapsed ? "vertical" : "inline",
     });
   };
 }

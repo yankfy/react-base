@@ -1,10 +1,10 @@
-import * as React from 'react';
-import * as Redux from 'redux';
-import { connect } from 'react-redux';
-import { Card, Table, Button, Modal, Input } from 'antd';
-import { TodoItem } from '../model/TodoItem';
-import { IState } from '../store/configStore';
-import { actionCreators } from '../actions/actions';
+import * as React from "react";
+import * as Redux from "redux";
+import { connect } from "react-redux";
+import { Card, Table, Button, Modal, Input } from "antd";
+import { TodoItem } from "../model/TodoItem";
+import { IState } from "../store/configStore";
+import { actionCreators } from "../actions/actions";
 
 const { Column } = Table;
 
@@ -23,7 +23,7 @@ class TodoPageComponent extends React.Component<ITodoProps, ITodoState> {
     super(props);
     this.state = {
       modalVisible: false,
-      newTaskName: ''
+      newTaskName: "",
     };
     this.handleOk = this.handleOk.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
@@ -32,7 +32,7 @@ class TodoPageComponent extends React.Component<ITodoProps, ITodoState> {
   public render(): JSX.Element {
     return (
       <div>
-        <Card bordered title="Todo List" style={{ margin: '16px 16px' }}>
+        <Card bordered title="Todo List" style={{ margin: "16px 16px" }}>
           <Button
             type="primary"
             icon="plus"
@@ -51,7 +51,7 @@ class TodoPageComponent extends React.Component<ITodoProps, ITodoState> {
               key="isCompleted"
               render={(text: any, record: TodoItem, index: number) => {
                 return (
-                  <span>{record.isCompleted ? 'Completed' : 'Pending'}</span>
+                  <span>{record.isCompleted ? "Completed" : "Pending"}</span>
                 );
               }}
             />
@@ -96,11 +96,12 @@ class TodoPageComponent extends React.Component<ITodoProps, ITodoState> {
       id: 0,
       key: 0,
       name: this.state.newTaskName,
-      isCompleted: false
+      isCompleted: false,
     };
     this.props.actions.addTodoAction(item);
     this.setState({ modalVisible: false });
   };
+
   private handleCancel = () => {
     this.setState({ modalVisible: false });
   };
@@ -108,17 +109,17 @@ class TodoPageComponent extends React.Component<ITodoProps, ITodoState> {
 
 const mapStateToProps = (state: IState): ITodoProps => {
   return {
-    todoItems: state.todos
+    todoItems: state.todos,
   };
 };
 
 const mapDispatchToProps = (dispatch: Redux.Dispatch<any>) => {
   return {
-    actions: Redux.bindActionCreators(actionCreators, dispatch)
+    actions: Redux.bindActionCreators(actionCreators, dispatch),
   };
 };
 
 export const TodoPage = connect<ITodoProps>(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(TodoPageComponent);

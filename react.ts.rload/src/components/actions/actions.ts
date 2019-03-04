@@ -1,10 +1,10 @@
-import { TodoItem } from '../model/TodoItem';
+import { TodoItem } from "../model/TodoItem";
 import {
   ActionTypes,
   IInitStoreAction,
   IAddTodoAction,
-  ICompleteTodoAction
-} from './actionTypes';
+  ICompleteTodoAction,
+} from "./actionTypes";
 
 export const initStoreAction = (todos: TodoItem[]): IInitStoreAction => {
   return { type: ActionTypes.INIT_STORE, todos };
@@ -20,5 +20,5 @@ export const completeTodoAction = (todo: TodoItem): ICompleteTodoAction => {
 
 export const actionCreators = {
   addTodoAction,
-  completeTodoAction
+  completeTodoAction,
 };
