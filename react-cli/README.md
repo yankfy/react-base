@@ -66,3 +66,28 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+constructor
+componentWillMount：组件挂载开始之前，也就是在组件调用 render 方法之前调用。
+render
+componentDidMount：组件挂载完成以后，也就是 DOM 元素已经插入页面后调用。
+componentWillUnmount：组件对应的 DOM 元素从页面中删除之前调用。
+
+
+shouldComponentUpdate(nextProps, nextState)：你可以通过这个方法控制组件是否重新渲染。如果返回 false 组件就不会重新渲染。这个生命周期在 React.js 性能优化上非常有用。
+componentWillReceiveProps(nextProps)：组件从父组件接收到新的 props 之前调用。
+componentWillUpdate()：组件开始重新渲染之前调用。
+componentDidUpdate()：组件重新渲染并且把更改变更到真实的 DOM 以后调用。
+
+我们一般会把组件的 state 的初始化工作放在 constructor 里面去做；在 componentWillMount 进行组件的启动工作，例如 Ajax 数据拉取、定时器的启动；组件从页面上销毁的时候，有时候需要一些数据的清理，例如定时器的清理，就会放在 componentWillUnmount 里面去做。
+
+
+static 开头的类属性，如 defaultProps、propTypes。
+构造函数，constructor。
+getter/setter（还不了解的同学可以暂时忽略）。
+组件生命周期。
+_ 开头的私有方法。
+事件监听方法，handle*。
+render*开头的方法，有时候 render() 方法里面的内容会分开到不同函数里面进行，这些函数都以 render* 开头。
+render() 方法。
