@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { LocaleProvider } from "antd";
 import enUS from "antd/lib/locale-provider/en_US";
 import { route } from "./routes";
-import { configureStore, initStore } from "./store/configStore";
+import { configureStore, initStore } from "./store/store";
 
 const store = configureStore();
 store.dispatch<any>(initStore());

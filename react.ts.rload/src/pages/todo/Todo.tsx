@@ -2,9 +2,9 @@ import * as React from "react";
 import * as Redux from "redux";
 import { connect } from "react-redux";
 import { Card, Table, Button, Modal, Input } from "antd";
-import { TodoItem } from "../model/TodoItem";
-import { IState } from "../store/configStore";
-import { actionCreators } from "../actions/actions";
+import { TodoItem } from "@/store/model/todoItem";
+import { IState } from "@/store/store";
+import { actionCreators } from "@/store/actions/actions";
 
 const { Column } = Table;
 

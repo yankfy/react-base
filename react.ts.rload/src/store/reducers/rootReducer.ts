@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { IState } from "../store/configStore";
+import { IState } from "@/store/store";
 import { todos } from "./todosReducer";
 
 export const initState: IState = {

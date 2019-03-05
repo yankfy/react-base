@@ -1,10 +1,11 @@
 import * as React from "react";
 import { RouteConfig } from "react-router-config";
 import { Route, Switch } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import { TodoPage } from "./pages/TodoPage";
-import AboutPage from "./pages/AboutPage";
-import PageLayout from "./layouts/PageLayout";
+import PageLayout from "@/pages/_layout/PageLayout";
+import HomePage from "@/pages/home/Home";
+import { TodoPage } from "@/pages/todo/Todo";
+import AboutPage from "@/pages/about/About";
+import ListPage from "@/pages/list/List";
 
 export const routes: RouteConfig[] = [
   {
@@ -19,6 +20,11 @@ export const routes: RouteConfig[] = [
   {
     path: "/about",
     component: () => <AboutPage />,
+  }
+  ,
+  {
+    path: "/list",
+    component: () => <ListPage />,
   },
 ];
 

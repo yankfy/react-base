@@ -1,4 +1,4 @@
-import { TodoItem } from "../model/TodoItem";
+import { TodoItem } from "../model/todoItem";
 import {
   ActionTypes,
   IInitStoreAction,

@@ -29,7 +29,7 @@ module.exports = {
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: [".ts", ".tsx", ".js", ".json"],
     alias: {
-      '@': './src'
+      '@': resolve(__dirname, "./src")
     }
   },
   devServer: {
@@ -91,7 +91,10 @@ module.exports = {
     },
     // match the output `publicPath`,
     proxy: {
-      // "/api": "http://localhost:3000"
+      "/api": {
+        "target":"http://10.119.169.42:8083/gms/adapter",
+        "changeOrigin":true
+      }
     }
   },
   module: {
@@ -117,7 +120,7 @@ module.exports = {
               })]
             }),
             compilerOptions: {
-              module: 'es2015'
+              module: 'es2015',
             }
           },
         }, ],

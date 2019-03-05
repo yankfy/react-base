@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, Dispatch, Action } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 import thunk from "redux-thunk";
-import { TodoItem } from "../model/TodoItem";
-import { initStoreAction } from "../actions/actions";
-import { rootReducer } from "../reducers/rootReducer";
+import { TodoItem } from "./model/todoItem";
+import { initStoreAction } from "./actions/actions";
+import { rootReducer } from "./reducers/rootReducer";
 
 export interface IState {
   todos: TodoItem[];
